@@ -59,6 +59,7 @@ namespace PostureCheck
 			contextMenuStrip.Items.Add("-------------------------");
 			contextMenuStrip.Items.Add("Home", null, homeContextMenu);
 			contextMenuStrip.Items.Add("Posture Check", getImage("skill2"), postureCheckMenu);
+			contextMenuStrip.Items.Add("Try Posture Check Sound", getImage("skill3"), tryPostureCheckMenu);
 			contextMenuStrip.Items.Add("Exit", null, exitToolStripMenuItem);
 
 
@@ -73,7 +74,7 @@ namespace PostureCheck
 
 		public void setTimer()
 		{
-			System.Threading.Timer timer = new System.Threading.Timer(playReminder, null, 0, Int32.Parse((TimeSpan.FromMinutes(1).TotalMilliseconds).ToString()));
+			System.Threading.Timer timer = new System.Threading.Timer(playReminder, null, 0, Int32.Parse((TimeSpan.FromMinutes(timeInterval).TotalMilliseconds).ToString()));
 		}
 		static void playReminder(object state)
 		{
@@ -114,8 +115,7 @@ namespace PostureCheck
 		}
 
 		private void homeContextMenu(object sender, EventArgs e)
-		{
-			playReminder(null);
+		{			
 			maskChange(new testUserControl());
 		}
 
@@ -123,9 +123,12 @@ namespace PostureCheck
 		{
 			maskChange(new CustomUserControls.PostureCheck());
 		}
+		private void tryPostureCheckMenu(object sender, EventArgs e)
+		{
+			playReminder(null);
+		}
 		private void exitToolStripMenuItem(object sender, EventArgs e)
 		{
-			// Clean up resources and close the application
 			notifyIcon.Dispose();
 			System.Windows.Forms.Application.Exit();
 		}
