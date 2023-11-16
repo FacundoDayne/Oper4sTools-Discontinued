@@ -47,7 +47,7 @@
 			this.Controls.Add(this.testUserControl1);
 			this.MinimumSize = new System.Drawing.Size(816, 489);
 			this.Name = "Oper4sTools";
-			this.Text = "Form1";
+			this.Text = "Oper4\'s Tools";
 			this.ResumeLayout(false);
 
 		}
