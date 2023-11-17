@@ -18,7 +18,7 @@ namespace PostureCheck
 			Console.WriteLine("This will appear in the console.");
 
 			// Initialize console-related code
-			ConsoleCode.OpenConsole();
+			ConsoleManager.OpenConsole();
 
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);

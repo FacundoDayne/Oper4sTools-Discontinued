@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Oper4sTools
 {
-	public class ConsoleCode
+	public class ConsoleManager
 	{
 
 		public static void OpenConsole()

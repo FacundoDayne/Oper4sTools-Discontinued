@@ -3,6 +3,7 @@ using System.Drawing;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using Oper4sTools;
 using Oper4sTools.Properties;
 using PostureCheck.Panels;
 
@@ -24,6 +25,8 @@ namespace PostureCheck
 			this.Icon = getIcon("haxxor_icon");
 			activeMask = testUserControl1;
 			setTimer();
+			//ConsoleManager.OpenConsole();
+			AllocConsole();
 		}
 
 		public static Bitmap getImage(string imageName)
@@ -51,11 +54,11 @@ namespace PostureCheck
 			activeMask.TabIndex = 0;
 			this.Controls.Add(this.activeMask);
 			activeMask.Show();
-			
+
 		}
 
 		private void InitializeTrayIcon()
-		{	
+		{
 			contextMenuStrip = new ContextMenuStrip();
 			contextMenuStrip.Items.Add("Welcome to Oper4's Tools", getImage("logo1"));
 			contextMenuStrip.Items.Add("-------------------------");
@@ -75,8 +78,6 @@ namespace PostureCheck
 			notifyIcon.MouseClick += NotifyIcon_Click;
 		}
 
-		
-
 		public void setTimer()
 		{
 			Console.WriteLine("Timer starts");
@@ -95,7 +96,7 @@ namespace PostureCheck
 				Console.WriteLine(e.Message);
 			}
 		}
-		
+
 		private void NotifyIcon_Click(object sender, MouseEventArgs e)
 		{
 			if (e.Button == MouseButtons.Left)
@@ -129,8 +130,8 @@ namespace PostureCheck
 		}
 
 		private void homeContextMenu(object sender, EventArgs e)
-		{			
-			maskChange(new testUserControl()); 
+		{
+			maskChange(new testUserControl());
 			Show();
 			WindowState = FormWindowState.Normal;
 		}
@@ -148,7 +149,7 @@ namespace PostureCheck
 
 		private void openDebugConsole(object sender, EventArgs e)
 		{
-			AllocConsole();
+			ConsoleManager.OpenConsole();
 		}
 		private void exitToolStripMenuItem(object sender, EventArgs e)
 		{
@@ -157,22 +158,9 @@ namespace PostureCheck
 			System.Windows.Forms.Application.Exit();
 		}
 
-
-
-		// Constants for ShowWindow method
-		private const int SW_RESTORE = 9;
-		private const int SW_MINIMIZE = 6;
-
 		[DllImport("kernel32.dll")]
 		private static extern bool AllocConsole();
 
-		[DllImport("kernel32.dll")]
-		private static extern bool FreeConsole();
-
-		[DllImport("kernel32.dll")]
-		private static extern IntPtr GetConsoleWindow();
-
-		[DllImport("user32.dll")]
-		private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+		
 	}
 }

@@ -86,7 +86,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ConsoleCode.cs" />
+    <Compile Include="ConsoleManager.cs" />
     <Compile Include="CustomUserControls\PostureCheck.cs">
       <SubType>UserControl</SubType>
     </Compile>
