@@ -3,17 +3,15 @@ using System.Drawing;
 using System.Media;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using Oper4sTools.Properties;
-using PostureCheck.Panels;
 
-namespace PostureCheck
+namespace Oper4sTools
 {
 	public partial class Oper4sTools : Form
 	{
 		Form thisForm;
 		private NotifyIcon notifyIcon;
 		private ContextMenuStrip contextMenuStrip;
-		private UserControl activeMask;
+		private UserControl _current;
 		System.Threading.Timer timer;
 		public static double timeInterval = 0.5;
 		public Oper4sTools()
@@ -22,39 +20,42 @@ namespace PostureCheck
 			InitializeComponent();
 			InitializeTrayIcon();
 			this.Icon = getIcon("haxxor_icon");
-			activeMask = testUserControl1;
+			_current = testUserControl1;
 			setTimer();
 		}
 
 		public static Bitmap getImage(string imageName)
 		{
-			Bitmap image = (Bitmap)Resources.ResourceManager.GetObject(imageName);
+			Bitmap image = (Bitmap)Properties.Resources.ResourceManager.GetObject(imageName);
 			return image;
 		}
 		public static Icon getIcon(string iconName)
 		{
-			Bitmap pngIcon = (Bitmap)Resources.ResourceManager.GetObject(iconName);
+			Bitmap pngIcon = (Bitmap)Properties.Resources.ResourceManager.GetObject(iconName);
 			IntPtr hBitmap = pngIcon.GetHicon();
 			Icon icon = Icon.FromHandle(hBitmap);
 			return icon;
 		}
 
-		private void maskChange(UserControl requestedMask)
-		{
-			this.Controls.Remove(activeMask);
-			activeMask.Dispose();
-			activeMask = requestedMask;
-			activeMask.Dock = System.Windows.Forms.DockStyle.Fill;
-			activeMask.Location = new System.Drawing.Point(0, 0);
-			activeMask.Name = "activeMask";
-			activeMask.Size = new System.Drawing.Size(800, 450);
-			activeMask.TabIndex = 0;
-			this.Controls.Add(this.activeMask);
-			activeMask.Show();
-			
-		}
+        public void maskChange(UserControl uc)
+        {
+            Controls.Remove(_current);
+            _current = uc;
+            Controls.Add(_current);
+            _current.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+            _current.AutoSize = true;
+            _current.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            _current.BackColor = System.Drawing.Color.Black;
+            _current.Dock = System.Windows.Forms.DockStyle.Fill;
+            _current.Location = new System.Drawing.Point(0, 0);
+            _current.Name = "_current";
+            _current.Size = new System.Drawing.Size(800, 450);
+            _current.TabIndex = 0;
+        }
 
-		private void InitializeTrayIcon()
+        private void InitializeTrayIcon()
 		{	
 			contextMenuStrip = new ContextMenuStrip();
 			contextMenuStrip.Items.Add("Welcome to Oper4's Tools", getImage("logo1"));
@@ -87,7 +88,7 @@ namespace PostureCheck
 			try
 			{
 				Console.WriteLine("Playing at {0}", DateTime.Now);
-				SoundPlayer player = new SoundPlayer(Resources.clip1);
+				SoundPlayer player = new SoundPlayer(Properties.Resources.clip1);
 				player.PlaySync();
 			}
 			catch (Exception e)
@@ -136,7 +137,7 @@ namespace PostureCheck
 
 		private void homeContextMenu(object sender, EventArgs e)
 		{			
-			maskChange(new testUserControl()); 
+			maskChange(new CustomUserControls.testUserControl()); 
 			Show();
 			WindowState = FormWindowState.Normal;
 		}
@@ -154,7 +155,7 @@ namespace PostureCheck
 
 		private void openDebugConsole(object sender, EventArgs e)
 		{
-			//
+			maskChange(new CustomUserControls.Oper4sToolsTerminal());
 		}
 		private void exitToolStripMenuItem(object sender, EventArgs e)
 		{

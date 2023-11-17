@@ -1,4 +1,4 @@
-﻿namespace PostureCheck
+﻿namespace Oper4sTools
 {
 	partial class Oper4sTools
 	{
@@ -28,33 +28,35 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.testUserControl1 = new PostureCheck.Panels.testUserControl();
-			this.SuspendLayout();
-			// 
-			// testUserControl1
-			// 
-			this.testUserControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.testUserControl1.Location = new System.Drawing.Point(0, 0);
-			this.testUserControl1.Name = "testUserControl1";
-			this.testUserControl1.Size = new System.Drawing.Size(800, 450);
-			this.testUserControl1.TabIndex = 0;
-			// 
-			// Oper4sTools
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(800, 450);
-			this.Controls.Add(this.testUserControl1);
-			this.MinimumSize = new System.Drawing.Size(816, 489);
-			this.Name = "Oper4sTools";
-			this.Text = "Oper4\'s Tools";
-			this.ResumeLayout(false);
+            this.testUserControl1 = new CustomUserControls.testUserControl();
+            this.SuspendLayout();
+            // 
+            // testUserControl1
+            // 
+            this.testUserControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.testUserControl1.Location = new System.Drawing.Point(0, 0);
+            this.testUserControl1.Name = "testUserControl1";
+            this.testUserControl1.Size = new System.Drawing.Size(800, 450);
+            this.testUserControl1.TabIndex = 0;
+            // 
+            // Oper4sTools
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.testUserControl1);
+            this.MinimumSize = new System.Drawing.Size(816, 489);
+            this.Name = "Oper4sTools";
+            this.Text = "Oper4\'s Tools";
+            this.ResumeLayout(false);
 
 		}
 
-		#endregion
+        #endregion
 
-		private Panels.testUserControl testUserControl1;
-	}
+        private CustomUserControls.testUserControl testUserControl1;
+    }
 }
 

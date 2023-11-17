@@ -5,20 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Oper4sTools.CustomUserControls
 {
-	public partial class PostureCheck : UserControl
-	{
-		public PostureCheck()
-		{
-			InitializeComponent();
-		}
-
-		
-
-	}
+    public partial class Oper4sToolsTerminal : UserControl
+    {
+        public Oper4sToolsTerminal()
+        {
+            InitializeComponent();
+        }
+    }
 }

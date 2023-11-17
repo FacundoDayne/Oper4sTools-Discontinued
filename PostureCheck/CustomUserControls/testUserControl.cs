@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PostureCheck.Panels
+namespace Oper4sTools.CustomUserControls
 {
 	public partial class testUserControl : UserControl
 	{

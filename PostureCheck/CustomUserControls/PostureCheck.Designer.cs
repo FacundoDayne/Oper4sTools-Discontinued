@@ -1,4 +1,4 @@
-﻿namespace PostureCheck.CustomUserControls
+﻿namespace Oper4sTools.CustomUserControls
 {
 	partial class PostureCheck
 	{
@@ -28,15 +28,17 @@
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.SuspendLayout();
-			// 
-			// PostureCheck
-			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.Name = "PostureCheck";
-			this.Size = new System.Drawing.Size(800, 450);
-			this.ResumeLayout(false);
+            this.SuspendLayout();
+            // 
+            // PostureCheck
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Margin = new System.Windows.Forms.Padding(0);
+            this.MinimumSize = new System.Drawing.Size(800, 450);
+            this.Name = "PostureCheck";
+            this.Size = new System.Drawing.Size(800, 450);
+            this.ResumeLayout(false);
 
 		}
 
