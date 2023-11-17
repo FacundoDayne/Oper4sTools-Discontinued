@@ -15,11 +15,6 @@ namespace PostureCheck
 		[STAThread]
 		static void Main()
 		{
-			Console.WriteLine("This will appear in the console.");
-
-			// Initialize console-related code
-			ConsoleManager.OpenConsole();
-
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Oper4sTools mainForm = new Oper4sTools();

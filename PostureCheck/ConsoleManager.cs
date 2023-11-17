@@ -12,18 +12,16 @@ namespace Oper4sTools
 
 		public static void OpenConsole()
 		{
-			IntPtr hwndConsole = GetConsoleWindow();
+			// Allocate the console
+			AllocConsole();
+			// Set up a handler for the ConsoleCancelEventHandler
+			Console.CancelKeyPress += Console_CancelKeyPress;			
+		}
 
-			// If the console window is not already open, allocate and attach a new console
-			if (hwndConsole == IntPtr.Zero)
-			{
-				AllocConsole();
-			}
-			else
-			{
-				// If the console window is already open, bring it to the foreground
-				ShowWindow(hwndConsole, SW_RESTORE);
-			}
+		private static void Console_CancelKeyPress(object sender, ConsoleCancelEventArgs e)
+		{
+			e.Cancel = true; // Prevent the default behavior (terminate the application)
+			HideConsole();   // Instead, hide the console
 		}
 
 		// Method to hide the console
@@ -39,7 +37,6 @@ namespace Oper4sTools
 		}
 
 		// Constants for ShowWindow method
-		private const int SW_RESTORE = 9;
 		private const int SW_MINIMIZE = 6;
 
 		[DllImport("kernel32.dll")]

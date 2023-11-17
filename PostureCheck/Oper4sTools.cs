@@ -25,8 +25,7 @@ namespace PostureCheck
 			this.Icon = getIcon("haxxor_icon");
 			activeMask = testUserControl1;
 			setTimer();
-			//ConsoleManager.OpenConsole();
-			AllocConsole();
+			ConsoleManager.OpenConsole();
 		}
 
 		public static Bitmap getImage(string imageName)
@@ -66,6 +65,7 @@ namespace PostureCheck
 			contextMenuStrip.Items.Add("Posture Check", getImage("skill2"), postureCheckMenu);
 			contextMenuStrip.Items.Add("Try Posture Check Sound", getImage("skill3"), tryPostureCheckMenu);
 			contextMenuStrip.Items.Add("Open Debug Console", null, openDebugConsole);
+			contextMenuStrip.Items.Add("Close Debug Console", null, closeDebugConsole);
 			contextMenuStrip.Items.Add("Exit", null, exitToolStripMenuItem);
 
 
@@ -77,7 +77,7 @@ namespace PostureCheck
 			notifyIcon.ContextMenuStrip = contextMenuStrip;
 			notifyIcon.MouseClick += NotifyIcon_Click;
 		}
-
+		
 		public void setTimer()
 		{
 			Console.WriteLine("Timer starts");
@@ -151,15 +151,17 @@ namespace PostureCheck
 		{
 			ConsoleManager.OpenConsole();
 		}
+		private void closeDebugConsole(object sender, EventArgs e)
+		{
+			ConsoleManager.HideConsole();
+		}
+
 		private void exitToolStripMenuItem(object sender, EventArgs e)
 		{
 			timer.Dispose();
 			notifyIcon.Dispose();
 			System.Windows.Forms.Application.Exit();
 		}
-
-		[DllImport("kernel32.dll")]
-		private static extern bool AllocConsole();
 
 		
 	}
