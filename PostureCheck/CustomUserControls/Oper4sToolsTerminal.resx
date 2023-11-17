@@ -117,53 +117,61 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="clip1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\clip1.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="cskill1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cskill1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cskill2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cskill2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cskill3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cskill3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cskill4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cskill4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cskill5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cskill5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cskill6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cskill6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="haxxor_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\haxxor_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="logo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="skill1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skill1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="skill2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skill2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="skill3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skill3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="skill4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skill4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="skill5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skill5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="skill6" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skill6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="skill7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\skill7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="richTextBox1.Text" xml:space="preserve">
+    <value>Beginning Oper4's Tools Terminal
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test
+test</value>
   </data>
 </root>

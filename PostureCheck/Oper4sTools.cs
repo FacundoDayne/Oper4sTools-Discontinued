@@ -15,7 +15,7 @@ namespace PostureCheck
 		private ContextMenuStrip contextMenuStrip;
 		private UserControl activeMask;
 		System.Threading.Timer timer;
-		public static double timeInterval = 0.5;
+		public static double timeInterval = 30;
 		public Oper4sTools()
 		{
 			thisForm = this;

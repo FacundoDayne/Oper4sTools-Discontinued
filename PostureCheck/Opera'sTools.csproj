@@ -87,6 +87,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConsoleCode.cs" />
+    <Compile Include="CustomUserControls\Oper4sToolsTerminal.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomUserControls\Oper4sToolsTerminal.Designer.cs">
+      <DependentUpon>Oper4sToolsTerminal.cs</DependentUpon>
+    </Compile>
     <Compile Include="CustomUserControls\PostureCheck.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="CustomUserControls\Oper4sToolsTerminal.resx">
+      <DependentUpon>Oper4sToolsTerminal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomUserControls\PostureCheck.resx">
       <DependentUpon>PostureCheck.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,6 +181,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="haxxor_icon.ico" />
+    <None Include="Resources\cskill1.png" />
+    <None Include="Resources\cskill6.png" />
+    <None Include="Resources\cskill5.png" />
+    <None Include="Resources\cskill4.png" />
+    <None Include="Resources\cskill3.png" />
+    <None Include="Resources\cskill2.png" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.8">
