@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -15,15 +16,18 @@ namespace PostureCheck
 		[STAThread]
 		static void Main()
 		{
-			Console.WriteLine("This will appear in the console.");
-
-			// Initialize console-related code
-			ConsoleCode.OpenConsole();
-
+			AllocConsole();
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
 			Oper4sTools mainForm = new Oper4sTools();
 			Application.Run();
+			FreeConsole();
 		}
+
+		[DllImport("kernel32.dll")]
+		private static extern bool AllocConsole();
+
+		[DllImport("kernel32.dll")]
+		private static extern bool FreeConsole();
 	}
 }

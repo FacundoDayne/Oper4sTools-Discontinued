@@ -104,6 +104,12 @@ namespace PostureCheck
 				WindowState = FormWindowState.Normal;
 			}
 			else if (e.Button == MouseButtons.Right) contextMenuStrip.Show(Cursor.Position);
+			else if (e.Button == MouseButtons.Middle)
+			{
+				timer.Dispose();
+				notifyIcon.Dispose();
+				System.Windows.Forms.Application.Exit();
+			}
 
 
 		}
@@ -148,7 +154,7 @@ namespace PostureCheck
 
 		private void openDebugConsole(object sender, EventArgs e)
 		{
-			AllocConsole();
+			//
 		}
 		private void exitToolStripMenuItem(object sender, EventArgs e)
 		{
@@ -157,22 +163,6 @@ namespace PostureCheck
 			System.Windows.Forms.Application.Exit();
 		}
 
-
-
-		// Constants for ShowWindow method
-		private const int SW_RESTORE = 9;
-		private const int SW_MINIMIZE = 6;
-
-		[DllImport("kernel32.dll")]
-		private static extern bool AllocConsole();
-
-		[DllImport("kernel32.dll")]
-		private static extern bool FreeConsole();
-
-		[DllImport("kernel32.dll")]
-		private static extern IntPtr GetConsoleWindow();
-
-		[DllImport("user32.dll")]
-		private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+		
 	}
 }
