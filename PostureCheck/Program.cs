@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Oper4sTools;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -14,12 +15,14 @@ namespace PostureCheck
 		[STAThread]
 		static void Main()
 		{
-			Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-			// Instantiate the MainForm without showing it
-			Oper4sTools mainForm = new Oper4sTools();
+			Console.WriteLine("This will appear in the console.");
 
-			// Start the application with the NotifyIcon
+			// Initialize console-related code
+			ConsoleCode.OpenConsole();
+
+			Application.EnableVisualStyles();
+			Application.SetCompatibleTextRenderingDefault(false);
+			Oper4sTools mainForm = new Oper4sTools();
 			Application.Run();
 		}
 	}

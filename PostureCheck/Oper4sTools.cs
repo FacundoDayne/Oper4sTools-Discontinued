@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Drawing;
 using System.Media;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Oper4sTools.Properties;
 using PostureCheck.Panels;
@@ -13,7 +14,8 @@ namespace PostureCheck
 		private NotifyIcon notifyIcon;
 		private ContextMenuStrip contextMenuStrip;
 		private UserControl activeMask;
-		public static int timeInterval = 30;
+		System.Threading.Timer timer;
+		public static double timeInterval = 0.5;
 		public Oper4sTools()
 		{
 			thisForm = this;
@@ -60,6 +62,7 @@ namespace PostureCheck
 			contextMenuStrip.Items.Add("Home", null, homeContextMenu);
 			contextMenuStrip.Items.Add("Posture Check", getImage("skill2"), postureCheckMenu);
 			contextMenuStrip.Items.Add("Try Posture Check Sound", getImage("skill3"), tryPostureCheckMenu);
+			contextMenuStrip.Items.Add("Open Debug Console", null, openDebugConsole);
 			contextMenuStrip.Items.Add("Exit", null, exitToolStripMenuItem);
 
 
@@ -72,14 +75,25 @@ namespace PostureCheck
 			notifyIcon.MouseClick += NotifyIcon_Click;
 		}
 
+		
+
 		public void setTimer()
 		{
-			System.Threading.Timer timer = new System.Threading.Timer(playReminder, null, 0, Int32.Parse((TimeSpan.FromMinutes(timeInterval).TotalMilliseconds).ToString()));
+			Console.WriteLine("Timer starts");
+			timer = new System.Threading.Timer(playReminder, null, 0, Int32.Parse((TimeSpan.FromMinutes(timeInterval).TotalMilliseconds).ToString()));
 		}
 		static void playReminder(object state)
 		{
-			SoundPlayer player = new SoundPlayer(Resources.clip1);
-			player.PlaySync();
+			try
+			{
+				Console.WriteLine("Playing at {0}", DateTime.Now);
+				SoundPlayer player = new SoundPlayer(Resources.clip1);
+				player.PlaySync();
+			}
+			catch (Exception e)
+			{
+				Console.WriteLine(e.Message);
+			}
 		}
 		
 		private void NotifyIcon_Click(object sender, MouseEventArgs e)
@@ -116,21 +130,49 @@ namespace PostureCheck
 
 		private void homeContextMenu(object sender, EventArgs e)
 		{			
-			maskChange(new testUserControl());
+			maskChange(new testUserControl()); 
+			Show();
+			WindowState = FormWindowState.Normal;
 		}
 
 		private void postureCheckMenu(object sender, EventArgs e)
 		{
 			maskChange(new CustomUserControls.PostureCheck());
+			Show();
+			WindowState = FormWindowState.Normal;
 		}
 		private void tryPostureCheckMenu(object sender, EventArgs e)
 		{
 			playReminder(null);
 		}
+
+		private void openDebugConsole(object sender, EventArgs e)
+		{
+			AllocConsole();
+		}
 		private void exitToolStripMenuItem(object sender, EventArgs e)
 		{
+			timer.Dispose();
 			notifyIcon.Dispose();
 			System.Windows.Forms.Application.Exit();
 		}
+
+
+
+		// Constants for ShowWindow method
+		private const int SW_RESTORE = 9;
+		private const int SW_MINIMIZE = 6;
+
+		[DllImport("kernel32.dll")]
+		private static extern bool AllocConsole();
+
+		[DllImport("kernel32.dll")]
+		private static extern bool FreeConsole();
+
+		[DllImport("kernel32.dll")]
+		private static extern IntPtr GetConsoleWindow();
+
+		[DllImport("user32.dll")]
+		private static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 	}
 }
