@@ -16,11 +16,11 @@ namespace Oper4sTools
 		[STAThread]
 		static void Main()
 		{
-			AllocConsole();
+			//AllocConsole();
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Oper4sTools mainForm = new Oper4sTools();
-			Application.Run();
+			//Oper4sTools mainForm = new Oper4sTools();
+			Application.Run(new Oper4sTools());
 			FreeConsole();
 		}
 

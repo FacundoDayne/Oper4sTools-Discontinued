@@ -45,10 +45,6 @@ namespace Oper4sTools
             _current.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
             | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
-            _current.AutoSize = true;
-            _current.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            _current.BackColor = System.Drawing.Color.Black;
-            _current.Dock = System.Windows.Forms.DockStyle.Fill;
             _current.Location = new System.Drawing.Point(0, 0);
             _current.Name = "_current";
             _current.Size = new System.Drawing.Size(800, 450);
